@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Post;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Post\PostCreateRequest;
+use App\Mail\Post\PostEmail;
 use Illuminate\Http\Request;
 use App\Repositories\Post\PostRepositoryInterface;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
@@ -58,6 +60,19 @@ class PostController extends Controller
         return Redirect::route('home');
     }
 
+    public function viewPost(Request $request){
+        $post=$this->repository->getById($request->route()->id);
+
+        if ($post!=null)
+        {
+            Mail::to('xineli9152@ovooovo.com')->send( new PostEmail($post));
+            return view('posts.post',['post'=>$post]);
+        }
+        else
+        {
+            return Redirect::route('home');
+        }
+    }
 
 
 }

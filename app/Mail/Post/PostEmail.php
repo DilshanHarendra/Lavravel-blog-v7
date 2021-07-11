@@ -2,6 +2,7 @@
 
 namespace App\Mail\Post;
 
+use App\Models\Post\Post;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -16,8 +17,10 @@ class PostEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    private $post;
+    public function __construct(Post $post)
     {
+        $this->post=$post;
         //
     }
 
@@ -28,6 +31,7 @@ class PostEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+
+        return $this->view('posts.post',['post'=>$this->post]);
     }
 }

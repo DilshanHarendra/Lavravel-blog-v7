@@ -22,3 +22,5 @@ Route::get('/create',[PostController::class,'showCreateForm'])->name('form');
 
 Route::get('/post/update/{id}',[PostController::class,'showUpdateForm'])->name('postUpdate');
 Route::put('/post/update/{id}',[PostController::class,'handleUpdate'])->name('postUpdateAction');
+
+Route::get('/post/view/{id}',[PostController::class,'viewPost'])->name('postView');
