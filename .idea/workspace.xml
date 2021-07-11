@@ -16,10 +16,6 @@
     <list default="true" id="01462783-1eea-4136-b042-d341ae20ec7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Post/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Post/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/Post/PostEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/Post/PostEmail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/post.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +160,7 @@
       <recent name="$PROJECT_DIR$/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Jobs/Post" />
       <recent name="$PROJECT_DIR$/app/Mail/Post" />
       <recent name="$PROJECT_DIR$/app/model/post" />
       <recent name="$PROJECT_DIR$/app/model" />
@@ -187,7 +184,7 @@
       <workItem from="1625928254001" duration="4510000" />
       <workItem from="1625992233934" duration="134000" />
       <workItem from="1625992378412" duration="4733000" />
-      <workItem from="1626012574695" duration="4447000" />
+      <workItem from="1626012574695" duration="5804000" />
     </task>
     <servers />
   </component>
@@ -211,6 +208,14 @@
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="2209" y="240" key="#com.intellij.ide.util.MemberChooser/1440.23.1920.1057/0.23.1440.823@1440.23.1920.1057" timestamp="1625931571182" />
+    <state x="1931" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1626017650863">
+      <screen x="1440" y="23" width="1920" height="1057" />
+    </state>
+    <state x="1931" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1440.23.1920.1057/0.23.1440.825@1440.23.1920.1057" timestamp="1626017650863" />
+    <state x="2138" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1626017615920">
+      <screen x="1440" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2138" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1440.23.1920.1057/0.23.1440.825@1440.23.1920.1057" timestamp="1626017615920" />
     <state x="1997" y="284" key="NewPhpClassDialog" timestamp="1625931473354">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>

@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Post;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Post\PostCreateRequest;
-use App\Mail\Post\PostEmail;
+use App\Jobs\Post\PostEmailJob;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Repositories\Post\PostRepositoryInterface;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
@@ -56,7 +56,7 @@ class PostController extends Controller
     public function handleUpdate(PostCreateRequest  $request)
     {
 
-        $post=$this->repository->update($request->route()->id,$request->all());
+        $this->repository->update($request->route()->id,$request->all());
         return Redirect::route('home');
     }
 
@@ -65,7 +65,8 @@ class PostController extends Controller
 
         if ($post!=null)
         {
-            Mail::to('xineli9152@ovooovo.com')->send( new PostEmail($post));
+            $job= ( new PostEmailJob($post))->delay(Carbon::now()->addSeconds(5));
+           dispatch($job);
             return view('posts.post',['post'=>$post]);
         }
         else
