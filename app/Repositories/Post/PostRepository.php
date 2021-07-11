@@ -19,9 +19,27 @@ class PostRepository implements PostRepositoryInterface
 
         return  $post;
     }
-    public function update()
+    public function update($id,$data)
     {
         // TODO: Implement update() method.
+       /* $post = $this->getById($id);
+        $post->name=$data['title'];
+        $post->description=$data['description'];
+        $post->category=$data['category'];
+        $post->cover_image=$data['image'];
+
+        $post->save();
+        return $post;
+*/
+        $post=array(
+            'name'=>$data['title'],
+            'description'=>$data['description'],
+            'category'=>$data['category'],
+            'cover_image'=>$data['image']
+        );
+
+        return Post::where('id',$id)->update($post);
+
     }
 
     public function delete()
@@ -38,5 +56,7 @@ class PostRepository implements PostRepositoryInterface
     public function getById($id)
     {
         // TODO: Implement getById() method.
+
+        return Post::where('id',$id)->first();
     }
 }

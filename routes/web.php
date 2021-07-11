@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/',[PostController::class,'showIndex'])->name('home');
 Route::post('/create',[PostController::class,'handleCreate'])->name('formAction');
 Route::get('/create',[PostController::class,'showCreateForm'])->name('form');
+
+Route::get('/post/update/{id}',[PostController::class,'showUpdateForm'])->name('postUpdate');
+Route::put('/post/update/{id}',[PostController::class,'handleUpdate'])->name('postUpdateAction');

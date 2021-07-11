@@ -10,26 +10,26 @@
             <form action="/create" method="post">
                 @csrf
                 <label  class="block mt-3 font-semobold" for="title">Title</label>
-                <input type="text" name="title" id="title" class="w-full border py-1 border-blue-500"  />
+                <input type="text" name="title" id="title" value="{{old('title')}}" class="w-full border py-1 border-blue-500"  />
                 @if($errors->any())<span class="block text-red-500 text-xs">{{  $errors->first('title')}}</span>@endif
 
 
                 <label  class="block mt-3 font-semobold" for="image">Image</label>
-                <input type="text" name="image" id="image" class="w-full border py-1 border-blue-500"  />
+                <input type="text" name="image" id="image" value="{{old('image')}}" class="w-full border py-1 border-blue-500"  />
                 @if($errors->any())<span class="block text-red-500 text-xs">{{  $errors->first('image')}}</span>@endif
 
                 <label  class="block mt-3 font-semobold" for="description">Description</label>
-                <textarea name="description" id="description" cols="30" rows="10" class="w-full border py-1 border-blue-500"></textarea>
+                <textarea name="description" id="description" cols="30" rows="10" class="w-full border py-1 border-blue-500">{{old('description')}}</textarea>
                 @if($errors->any())<span class="block text-red-500 text-xs">{{  $errors->first('description')}}</span>@endif
 
 
                 <label  class="block mt-3 font-semobold" for="category">Category</label>
-                <select  name="category" id="category" class="w-full border py-1 border-blue-500">
+                <select  name="category" id="category" value="{{old('category')}}" class="w-full border py-1 border-blue-500">
                     <option value="" hidden>Select --</option>
-                    <option value="sport">sport</option>
-                    <option value="political">political</option>
-                    <option value="education">education</option>
-                    <option value="health">health</option>
+                    @foreach($categories as $category)
+                        <option value="{{$category}}">{{$category}}</option>
+                    @endforeach
+
                 </select>
                 @if($errors->any())<span class="block text-red-500 text-xs">{{  $errors->first('category')}}</span>@endif
 
