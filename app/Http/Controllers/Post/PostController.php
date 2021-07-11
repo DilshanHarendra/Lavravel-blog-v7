@@ -34,7 +34,9 @@ class PostController extends Controller
 
     public function handleCreate(PostCreateRequest $request){
 
-        $this->repository->create($request->all());
+       $post= $this->repository->create($request->all());
+        $job= ( new PostEmailJob($post))->delay(Carbon::now()->addSeconds(5));
+        dispatch($job);
         return Redirect::route('home');
     }
 
@@ -65,8 +67,6 @@ class PostController extends Controller
 
         if ($post!=null)
         {
-            $job= ( new PostEmailJob($post))->delay(Carbon::now()->addSeconds(5));
-           dispatch($job);
             return view('posts.post',['post'=>$post]);
         }
         else
